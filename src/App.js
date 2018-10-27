@@ -83,7 +83,7 @@ class App extends Component {
 
   render() {
     const {cards, guesses, hallOfFame, matchedCardIndices} = this.state
-    const won = matchedCardIndices.length === cards.length
+    const won = matchedCardIndices.length === 4
     return (
       <div className="memory">
         <GuessCount guesses={guesses} />
@@ -100,7 +100,7 @@ class App extends Component {
         {
           won && 
           (hallOfFame ? (
-            <HallOfFame entries={FAKE_HOF} />
+            <HallOfFame entries={hallOfFame} />
           ) : (
             <HighScoreInput guesses={guesses} onStored={this.displayHallOfFame} />
           ))

@@ -16,7 +16,7 @@ class HighScoreInput extends Component {
   // arrow function for binding
   persistWinner = (event) => {
     event.preventDefault()
-    const newEntry = { guesses: this.props.guesses, player: this.props.winner }
+    const newEntry = { guesses: this.props.guesses, player: this.state.winner }
     saveHOFEntry(newEntry, this.props.onStored)
   }
 
